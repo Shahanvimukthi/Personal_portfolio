@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Shahan Vimukthi — Personal Portfolio">
+  <meta name="keywords" content="shahan, shahan vimukthi, GS Vimukthi, portfolio">
+  <meta name="author" content="Shahan Vimukthi">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="image/logo.png" type="image/png">
+  <title>Shahan Vimukthi</title>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">SV<span class="dot">.</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- SIDE DRAWER -->
+  <div class="drawer" id="drawer">
+    <button class="drawer-close" id="drawerClose">✕</button>
+    <nav class="drawer-nav">
+      <a href="index.html" class="drawer-link active">About</a>
+      <a href="home.html" class="drawer-link">Home</a>
+      <a href="galery.html" class="drawer-link">Gallery</a>
+      <a href="#social-section" class="drawer-link">Contact</a>
+    </nav>
+    <div class="drawer-footer">Shahan Vimukthi</div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-text">GS</div>
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Shahan<br><span class="hero-name-accent">Vimukthi</span></h1>
+      <p class="hero-sub">Physical Science Undergraduate · Front-End Developer · Designer</p>
+      
+      <a href="home.html" class="hero-btn">Explore Portfolio <span class="arrow">→</span></a>
+    </div>
+    <div class="hero-portrait">
+      <div class="portrait-ring"></div>
+      <div class="portrait-box">
+        <img src="image\Shahan_Vimukthi.jpg" alt="Shahan Vimukthi" class="portrait-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT STRIP -->
+  <section class="about-strip">
+    <div class="about-inner">
+      <h2 class="section-label">About Me</h2>
+      <p class="about-text">
+        I'm G.S. Vimukthi — based in Sri Lanka, currently studying at Rajarata University.
+        I sit at the intersection of <strong>Computer Science</strong> and <strong>Mathematical Theory</strong>.
+        My toolkit goes beyond HTML and CSS — I bring the precision of a statistician to
+        Front-End Development, blending logic with creativity.
+      </p>
+      <a href="home.html" class="outline-btn">View Full Profile →</a>
+    </div>
+  </section>
+
+  <!-- QUICK STATS -->
+  <section class="stats">
+    <div class="stat-card">
+      <span class="stat-num"></span>
+      <span class="stat-label"></span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">BSc</span>
+      <span class="stat-label">Physical Science</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num"></span>
+      <span class="stat-label"></span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-num">🇱🇰</span>
+      <span class="stat-label">Sri Lanka</span>
+    </div>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const close = document.getElementById('drawerClose');
+    function openDrawer() { drawer.classList.add('open'); overlay.classList.add('show'); }
+    function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('show'); }
+    toggle.addEventListener('click', openDrawer);
+    close.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+  </script>
+</body>
+</html>

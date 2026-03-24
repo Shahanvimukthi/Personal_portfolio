@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Shahan Vimukthi — Portfolio">
+  <meta name="keywords" content="shahan, shahan vimukthi, GS Vimukthi">
+  <meta name="author" content="Shahan Vimukthi">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="image/logo.png" type="image/png">
+  <title>Shahan — Portfolio</title>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">SV<span class="dot">.</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- SIDE DRAWER -->
+  <div class="drawer" id="drawer">
+    <button class="drawer-close" id="drawerClose">✕</button>
+    <nav class="drawer-nav">
+      <a href="index.html" class="drawer-link">About</a>
+      <a href="home.html" class="drawer-link active">Home</a>
+      <a href="galery.html" class="drawer-link">Gallery</a>
+      <a href="#social-section" class="drawer-link">Contact</a>
+    </nav>
+    <div class="drawer-footer">Shahan Vimukthi</div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <h1 class="page-title">Portfolio</h1>
+    <p class="page-sub">Education · Skills · Social · Experience</p>
+  </section>
+
+  <!-- CATEGORY CARDS -->
+  <section class="cat-section">
+    <div class="cat-cards">
+      <div class="cat-card" onclick="scrollToSection('edu-section')">
+        <div class="cat-icon">🎓</div>
+        <div class="cat-name">Educational</div>
+      </div>
+      <div class="cat-card" onclick="scrollToSection('social-section')">
+        <div class="cat-icon">🌐</div>
+        <div class="cat-name">Social Media</div>
+      </div>
+      <div class="cat-card" onclick="scrollToSection('skills-section')">
+        <div class="cat-icon">💪</div>
+        <div class="cat-name">Skills</div>
+      </div>
+      <div class="cat-card" onclick="scrollToSection('experience-section')">
+        <div class="cat-icon">💼</div>
+        <div class="cat-name">Experience</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATIONAL SECTION -->
+  <section class="content-section" id="edu-section">
+    <div class="section-header">
+      <h2 class="section-title">Educational Journey</h2>
+    </div>
+
+    <div class="edu-timeline">
+
+      <!-- Primary -->
+      <div class="edu-card">
+        <div class="edu-card-header">
+          <div class="edu-icon">🏫</div>
+          <div>
+            <h3 class="edu-school">Mihindu Primary College</h3>
+            <span class="edu-period">2009 – 2013</span>
+          </div>
+          <button class="edu-toggle" onclick="toggleEdu(this)">+</button>
+        </div>
+        <div class="edu-body">
+          <div class="edu-detail"><span class="edu-key">Certification</span><span class="edu-val">Scholarship Examination</span></div>
+          <div class="edu-detail"><span class="edu-key">Location</span><span class="edu-val">Dapiligoda, Agalawatta, Western Province</span></div>
+          <div class="edu-detail"><span class="edu-key">Fields</span><span class="edu-val">Religion, Environment, Mathematics, Language</span></div>
+        </div>
+      </div>
+
+      <!-- Secondary -->
+      <div class="edu-card">
+        <div class="edu-card-header">
+          <div class="edu-icon">🏛️</div>
+          <div>
+            <h3 class="edu-school">Mihindu Central College</h3>
+            <span class="edu-period">2014 – 2024</span>
+          </div>
+          <button class="edu-toggle" onclick="toggleEdu(this)">+</button>
+        </div>
+        <div class="edu-body">
+          <div class="edu-detail"><span class="edu-key">Certifications</span><span class="edu-val">O/L Examination, A/L Examination</span></div>
+          <div class="edu-detail"><span class="edu-key">Location</span><span class="edu-val">Agalawatta, Western Province</span></div>
+          <div class="edu-detail"><span class="edu-key">Stream</span><span class="edu-val">Physical Science — Combined Mathematics, Physics, ICT</span></div>
+          <div class="edu-detail"><span class="edu-key">Leadership</span><span class="edu-val">School Prefect (2019–2022)</span></div>
+          <div class="edu-links">
+            <a href="https://www.facebook.com/mihinducc/" target="_blank" class="edu-link">Facebook</a>
+            <a href="https://www.linkedin.com/school/mihindu-central-college-e/" target="_blank" class="edu-link">LinkedIn</a>
+            <a href="https://mihinducc.free.nf/" target="_blank" class="edu-link">Website</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course -->
+      <div class="edu-card">
+        <div class="edu-card-header">
+          <div class="edu-icon">🔧</div>
+          <div>
+            <h3 class="edu-school">Vocational Training Center</h3>
+            <span class="edu-period">Jul 2022 – Jan 2023</span>
+          </div>
+          <button class="edu-toggle" onclick="toggleEdu(this)">+</button>
+        </div>
+        <div class="edu-body">
+          <div class="edu-detail"><span class="edu-key">Course</span><span class="edu-val">Hardware & Network Certificate</span></div>
+          <div class="edu-detail"><span class="edu-key">Location</span><span class="edu-val">Dehivala, Western Province</span></div>
+          <div class="edu-detail"><span class="edu-key">Skills Gained</span><span class="edu-val">Hardware repair, troubleshooting, Windows installation, networking, domain-based networks</span></div>
+          <div class="edu-links">
+            <a href="https://www.facebook.com/vtc.dehiwala/" target="_blank" class="edu-link">Facebook</a>
+            <a href="https://www.vtcdehiwala.lk/" target="_blank" class="edu-link">Website</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- University -->
+      <div class="edu-card featured">
+        <div class="edu-featured-badge">Current</div>
+        <div class="edu-card-header">
+          <div class="edu-icon">🎓</div>
+          <div>
+            <h3 class="edu-school">Rajarata University of Sri Lanka</h3>
+            <span class="edu-period">Oct 2024 – Present</span>
+          </div>
+          <button class="edu-toggle" onclick="toggleEdu(this)">+</button>
+        </div>
+        <div class="edu-body">
+          <div class="edu-detail"><span class="edu-key">Degree</span><span class="edu-val">BSc — Physical Science (Mathematics, Computer Science, Statistics)</span></div>
+          <div class="edu-detail"><span class="edu-key">Faculty</span><span class="edu-val">Applied Science Faculty</span></div>
+          <div class="edu-detail"><span class="edu-key">Location</span><span class="edu-val">Mihinthalaya, Anuradhapura, North Central Province</span></div>
+          <div class="edu-detail"><span class="edu-key">Role</span><span class="edu-val">undergraduate in the Rajarata University </span></div>
+          <div class="edu-links">
+            <a href="https://www.rjt.ac.lk/" target="_blank" class="edu-link">Website</a>
+            <a href="https://www.facebook.com/RajarataUniversity/" target="_blank" class="edu-link">Facebook</a>
+            <a href="https://en.wikipedia.org/wiki/Rajarata_University_of_Sri_Lanka" target="_blank" class="edu-link">Wikipedia</a>
+            <a href="https://lk.linkedin.com/school/rajarata-university-of-sri-lanka/" target="_blank" class="edu-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="content-section alt-bg" id="skills-section">
+    <div class="section-header">
+      <h2 class="section-title">Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-pill">HTML / CSS</div>
+      <div class="skill-pill">JavaScript</div>
+      <div class="skill-pill">Computer Science</div>
+      <div class="skill-pill">Mathematics</div>
+      <div class="skill-pill">Statistics</div>
+      <div class="skill-pill">Hardware & Networking</div>
+      <div class="skill-pill">UI Design</div>
+      <div class="skill-pill">Problem Solving</div>
+      <div class="skill-pill">Leadership</div>
+    </div>
+  </section>
+
+  <!-- SOCIAL SECTION -->
+  <section class="content-section" id="social-section">
+    <div class="section-header">
+      <h2 class="section-title">Social Media</h2>
+    </div>
+    <div class="social-cards">
+      <a href="https://www.linkedin.com/in/shahan-vimukthi-6a52652a8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-card">
+        <span class="social-icon"><img src="image/Linkedin.png"></span>
+        <span class="social-name">Linkedin</span>
+        <span class="social-arrow">→</span>
+      </a>
+      <a href="https://www.instagram.com/vimukthigajanayaka?igsh=ZWx0eTRzMjhpaTFq" class="social-card">
+        <span class="social-icon"><img src="image/instargram.png"></span>
+        <span class="social-name">Instargram</span>
+        <span class="social-arrow">→</span>
+      </a>
+      <a href="https://www.facebook.com/share/18TkcnPwb4/" class="social-card">
+        <span class="social-icon"><img src="image/facebook.avif"></span>
+        <span class="social-name">Facebook</span>
+        <span class="social-arrow">→</span>
+      </a>
+      <a href="https://github.com/shahanvimukthi" class="social-card">
+        <span class="social-icon"><img src="image/GitHub.png"></span>
+        <span class="social-name">GitHub</span>
+        <span class="social-arrow">→</span>
+      </a>
+      </a>
+      <a href="https://www.tiktok.com/@shahan.vimukthi1?_r=1&_t=ZS-94vi1QdAHJM" class="social-card">
+        <span class="social-icon"><img src="image/tiktok.jpg"></span>
+        <span class="social-name">tiktok</span>
+        <span class="social-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+   <section class="content-section" id="experience-section">
+    <div class="section-header">
+      <h2 class="section-title">Experiences</h2>
+    </div>
+
+    <div class="edu-timeline">
+
+      <!-- Primary -->
+      <div class="edu-card featured">
+        <div class="edu-featured-badge">Current</div>
+        <div class="edu-card-header">
+          <div class="exp-icon"></div>
+          <div>
+            <h3 class="edu-school">Sasnaka Sansada</h3>
+            <span class="edu-period">2025 – Present</span>
+          </div>
+          <button class="edu-toggle" onclick="toggleEdu(this)">+</button>
+        </div>
+        <div class="edu-body">
+          <div class="edu-detail"><span class="edu-key">Position</span><span class="edu-val">Volunteer</span></div>
+          <div class="edu-detail"><span class="edu-key">Location</span><span class="edu-val">around Anuradhapura</span></div>
+          <div class="edu-detail"><span class="edu-key">Fields</span><span class="edu-val">Ordinary Level Mathematics Teacher</span></div>
+        <div class="edu-links">
+            <a href="https://www.facebook.com/sasnaka" target="_blank" class="edu-link">Facebook</a>
+            <a href="https://lk.linkedin.com/company/sasnaka" target="_blank" class="edu-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary -->
+      <div class="edu-card featured">
+        <div class="edu-featured-badge">Current</div>
+        <div class="edu-card-header">
+          <div class="edu-icon "></div>
+          <div>
+            <h3 class="edu-school">RAS Committee</h3>
+            <span class="edu-period">2026 – Present</span>
+          </div>
+          <button class="edu-toggle" onclick="toggleEdu(this)">+</button>
+        </div>
+        <div class="edu-body">
+          <div class="edu-detail"><span class="edu-key">Name Of Committee</span><span class="edu-val">Robotics And Automation Society</span></div>
+          <div class="edu-detail"><span class="edu-key">Position</span><span class="edu-val">Webmaster of RAS Committee</span></div>
+          <div class="edu-detail"><span class="edu-key">Location</span><span class="edu-val">Rajarata University of Sri Lanka</span></div>
+          <div class="edu-detail"><span class="edu-key">Experience</span><span class="edu-val">Designing and Publishing <br> Leader shaping</span></div>
+          <div class="edu-links">
+            <a href="https://www.facebook.com/share/1KFzNweMdF/" target="_blank" class="edu-link">Facebook</a>
+            <a href="https://www.instagram.com/ieee.ras.rjt?igsh=MTNocmNobXBzbXY0Mg==" target="_blank" class="edu-link">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMSA Society -->
+       
+      <div class="edu-card featured">
+        <div class="edu-featured-badge">Current</div>
+        <div class="edu-card-header">
+          <div class="exp-icon"></div>
+          <div>
+            <h3 class="edu-school">IMSA Society</h3>
+            <span class="edu-period">2025 – Present</span>
+          </div>
+          <button class="edu-toggle" onclick="toggleEdu(this)">+</button>
+        </div>
+        <div class="edu-body">
+          <div class="edu-detail"><span class="edu-key">Name Of Committee</span><span class="edu-val">Industrial Mathematics Students' Association</span></div>
+          <div class="edu-detail"><span class="edu-key">Position</span><span class="edu-val">Volunteer</span></div>
+          <div class="edu-detail"><span class="edu-key">Location</span><span class="edu-val">University of Rajarata</span></div>
+          <div class="edu-detail"><span class="edu-key">Fields</span><span class="edu-val"> Event Videography, Photography, And Designing <br> 
+            collaborate to Design and Develop the Society New Website </span></div>
+        <div class="edu-links">
+            <a href="https://www.facebook.com/rajarata.imsa/" target="_blank" class="edu-link">Facebook</a>
+            <a href="https://lk.linkedin.com/company/imsa-rusl" target="_blank" class="edu-link">LinkedIn</a>
+            <a href="Industrial Mathematics Students' Association" target="_blank" class="edu-link">Website</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course -->
+       <!--
+      <div class="edu-card">
+        <div class="edu-card-header">
+          <div class="edu-icon">🔧</div>
+          <div>
+            <h3 class="edu-school">Vocational Training Center</h3>
+            <span class="edu-period">Jul 2022 – Jan 2023</span>
+          </div>
+          <button class="edu-toggle" onclick="toggleEdu(this)">+</button>
+        </div>
+        <div class="edu-body">
+          <div class="edu-detail"><span class="edu-key">Course</span><span class="edu-val">Hardware & Network Certificate</span></div>
+          <div class="edu-detail"><span class="edu-key">Location</span><span class="edu-val">Dehivala, Western Province</span></div>
+          <div class="edu-detail"><span class="edu-key">Skills Gained</span><span class="edu-val">Hardware repair, troubleshooting, Windows installation, networking, domain-based networks</span></div>
+          <div class="edu-links">
+            <a href="https://www.facebook.com/vtc.dehiwala/" target="_blank" class="edu-link">Facebook</a>
+            <a href="https://www.vtcdehiwala.lk/" target="_blank" class="edu-link">Website</a>
+          </div>
+        </div>
+      </div>
+      -->
+      <!-- University 
+      <div class="edu-card featured">
+        <div class="edu-featured-badge">Current</div>
+        <div class="edu-card-header">
+          <div class="edu-icon">🎓</div>
+          <div>
+            <h3 class="edu-school">Rajarata University of Sri Lanka</h3>
+            <span class="edu-period">Oct 2024 – Present</span>
+          </div>
+          <button class="edu-toggle" onclick="toggleEdu(this)">+</button>
+        </div>
+        <div class="edu-body">
+          <div class="edu-detail"><span class="edu-key">Degree</span><span class="edu-val">BSc — Physical Science (Mathematics, Computer Science, Statistics)</span></div>
+          <div class="edu-detail"><span class="edu-key">Faculty</span><span class="edu-val">Applied Science Faculty</span></div>
+          <div class="edu-detail"><span class="edu-key">Location</span><span class="edu-val">Mihinthalaya, Anuradhapura, North Central Province</span></div>
+          <div class="edu-detail"><span class="edu-key">Role</span><span class="edu-val">undergraduate in the Rajarata University </span></div>
+          <div class="edu-links">
+            <a href="https://www.rjt.ac.lk/" target="_blank" class="edu-link">Website</a>
+            <a href="https://www.facebook.com/RajarataUniversity/" target="_blank" class="edu-link">Facebook</a>
+            <a href="https://en.wikipedia.org/wiki/Rajarata_University_of_Sri_Lanka" target="_blank" class="edu-link">Wikipedia</a>
+            <a href="https://lk.linkedin.com/school/rajarata-university-of-sri-lanka/" target="_blank" class="edu-link">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+ -->
+
+ <!--Projects-->
+ <section class="content-section" id="projects-section">
+    <div class="section-header">
+      <h2 class="section-title">Projects</h2>
+    </div>
+
+
+ </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 Shahan Vimukthi·</p>
+  </footer>
+
+  <script>
+    // Drawer
+    const toggle = document.getElementById('navToggle');
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const close = document.getElementById('drawerClose');
+    function openDrawer() { drawer.classList.add('open'); overlay.classList.add('show'); }
+    function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('show'); }
+    toggle.addEventListener('click', openDrawer);
+    close.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+
+    // Edu toggle
+    function toggleEdu(btn) {
+      const card = btn.closest('.edu-card');
+      card.classList.toggle('expanded');
+      btn.textContent = card.classList.contains('expanded') ? '−' : '+';
+    }
+
+    // Scroll helper
+    function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+  </script>
+</body>
+</html>

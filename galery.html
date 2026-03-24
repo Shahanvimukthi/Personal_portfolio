@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Shahan Vimukthi — Personal Portfolio">
+  <meta name="keywords" content="shahan, shahan vimukthi, GS Vimukthi, portfolio">
+  <meta name="author" content="Shahan Vimukthi">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="galary.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="image/logo.png" type="image/png">
+  <title>Shahan-Gallery</title>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">SV<span class="dot">.</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- SIDE DRAWER -->
+  <div class="drawer" id="drawer">
+    <button class="drawer-close" id="drawerClose">✕</button>
+    <nav class="drawer-nav">
+      <a href="index.html" class="drawer-link">About</a>
+      <a href="home.html" class="drawer-link">Home</a>
+      <a href="galery.html" class="drawer-link active">Gallery</a>
+      <a href="#social-section" class="drawer-link">Contact</a>
+    </nav>
+    <div class="drawer-footer">Shahan Vimukthi</div>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- HEADERS -->
+  <header class="page-header align-center">
+    <h1 class="page-title align-center">Gallery</h1>
+    <p class="page-sub">A collection of my work and experiences</p>
+  </header>
+
+  <!-- GALLERY CARDS -->
+  <section class="gallery-section" id="destinations">
+    <div class="gallery-grid">
+
+      <!-- CARD 1 — France (4 images) -->
+      <div class="gal-card" onclick="openCarousel(0)">
+        <div class="gal-img-wrap">
+          <img src="image/Sasnaka.jpeg" alt="France cover">
+          <div class="gal-overlay">
+            <span class="gal-count" data-count="4">3 Photos</span>
+          </div>
+        </div>
+        <div class="gal-body">
+          <h5 class="gal-title">Volunteering at Sasnaka Sansadaya</h5>
+          <p class="gal-text">France is famous for its romantic cities, historic architecture, and beautiful countryside.</p>
+        </div>
+        <!-- Hidden extra images for this card -->
+        <div class="gal-hidden-imgs" style="display:none;">
+          <img src="image/sasnaka04.jpeg" alt=" 1" data-caption="">
+          <img src="image/sasbaka02.jpeg" alt=" 2" data-caption="">
+          <img src="image/sasnaka03.jpeg" alt=" 3" data-caption="">
+        </div>
+      </div>
+
+      <!-- CARD 2 — Italy (3 images) -->
+      <div class="gal-card" onclick="openCarousel(1)">
+        <div class="gal-img-wrap">
+          <img src="image/uni.jpeg" alt="Italy cover">
+          <div class="gal-overlay">
+            <span class="gal-count">3 Photos</span>
+          </div>
+        </div>
+        <div class="gal-body">
+          <h5 class="gal-title">University Extra curricular Activities</h5>
+          <p class="gal-text">Exhibition, Cultural Events, society works, Projects</p>
+        </div>
+        <!-- Hidden extra images for this card -->
+        <div class="gal-hidden-imgs" style="display:none;">
+          <img src="image/rocket science stall.jpeg" alt=" 1" data-caption="Rocket Science Stall in Faculty Exhibition">
+          <img src="image/Science talk.jpeg" alt=" 2" data-caption="Science Talk with IMSA Society">
+          <img src="image/imsa teaching.jpeg" alt=" 3" data-caption="Mathematics teaching session with IMSA Society">
+        </div>
+      </div>
+
+      <!-- CARD 3 — Japan (5 images) -->
+      <div class="gal-card" onclick="openCarousel(2)">
+        <div class="gal-img-wrap">
+          <img src="image/Shahan_Vimukthi.jpg" alt="Japan cover">
+          <div class="gal-overlay">
+            <span class="gal-zoom">&#128269;</span>
+            <span class="gal-count">5 Photos</span>
+          </div>
+        </div>
+        <div class="gal-body">
+          <h5 class="gal-title">Japan</h5>
+          <p class="gal-text">Japan blends ancient traditions with modern innovation, from temples to futuristic cities.</p>
+        </div>
+        <!-- Hidden extra images for this card -->
+        <div class="gal-hidden-imgs" style="display:none;">
+          <img src="image/Shahan_Vimukthi.jpg" alt="Japan 1" data-caption="Mount Fuji">
+          <img src="image/Shahan_Vimukthi.jpg" alt="Japan 2" data-caption="Tokyo Skyline">
+          <img src="image/Shahan_Vimukthi.jpg" alt="Japan 3" data-caption="Fushimi Inari Shrine">
+          <img src="image/Shahan_Vimukthi.jpg" alt="Japan 4" data-caption="Arashiyama Bamboo">
+          <img src="image/Shahan_Vimukthi.jpg" alt="Japan 5" data-caption="Cherry Blossoms">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== CAROUSEL MODAL ===== -->
+  <div class="carousel-modal" id="carouselModal">
+    <div class="carousel-backdrop" onclick="closeCarousel()"></div>
+    <div class="carousel-box">
+
+      <!-- Header: album title + close -->
+      <div class="carousel-header">
+        <span class="carousel-album-title" id="carouselAlbumTitle"></span>
+        <span class="carousel-counter" id="carouselCounter"></span>
+        <button class="carousel-close" onclick="closeCarousel()">&#x2715;</button>
+      </div>
+
+      <!-- Main image -->
+      <div class="carousel-stage">
+        <button class="carousel-arrow left" onclick="prevSlide()">&#8592;</button>
+        <div class="carousel-img-wrap">
+          <img src="" alt="" id="carouselImg" class="carousel-img">
+        </div>
+        <button class="carousel-arrow right" onclick="nextSlide()">&#8594;</button>
+      </div>
+
+      <!-- Caption -->
+      <div class="carousel-caption">
+        <p id="carouselCaption"></p>
+      </div>
+
+      <!-- Thumbnail strip -->
+      <div class="carousel-thumbs" id="carouselThumbs"></div>
+
+    </div>
+  </div>
+
+
+
+
+
+  <script>
+    // ── Drawer ──────────────────────────────────────
+    const toggle = document.getElementById('navToggle');
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const close = document.getElementById('drawerClose');
+    function openDrawer()  { drawer.classList.add('open');    overlay.classList.add('show'); }
+    function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('show'); }
+    toggle.addEventListener('click', openDrawer);
+    close.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+
+    // ── Carousel ─────────────────────────────────────
+    const modal         = document.getElementById('carouselModal');
+    const carImg        = document.getElementById('carouselImg');
+    const carCaption    = document.getElementById('carouselCaption');
+    const carCounter    = document.getElementById('carouselCounter');
+    const carAlbumTitle = document.getElementById('carouselAlbumTitle');
+    const thumbsWrap    = document.getElementById('carouselThumbs');
+
+    let slides  = [];   // { src, alt, caption } for the current album
+    let current = 0;
+
+    // Build slides array from a card's .gal-hidden-imgs
+    function buildSlides(cardIndex) {
+      const cards = document.querySelectorAll('.gal-card');
+      const card  = cards[cardIndex];
+
+      // Album title from the card heading
+      carAlbumTitle.textContent = card.querySelector('.gal-title').textContent;
+
+      // Collect hidden images
+      const imgs = card.querySelectorAll('.gal-hidden-imgs img');
+      slides = Array.from(imgs).map(img => ({
+        src:     img.src,
+        alt:     img.alt,
+        caption: img.dataset.caption || img.alt
+      }));
+
+      // Build thumbnail strip
+      thumbsWrap.innerHTML = '';
+      slides.forEach((s, i) => {
+        const thumb = document.createElement('button');
+        thumb.className = 'carousel-thumb';
+        thumb.setAttribute('aria-label', 'View ' + s.caption);
+        thumb.innerHTML = `<img src="${s.src}" alt="${s.alt}">`;
+        thumb.addEventListener('click', () => goTo(i));
+        thumbsWrap.appendChild(thumb);
+      });
+    }
+
+    function updateCarousel() {
+      const s = slides[current];
+
+      // Fade out → swap → fade in
+      carImg.style.opacity = '0';
+      setTimeout(() => {
+        carImg.src          = s.src;
+        carImg.alt          = s.alt;
+        carCaption.textContent = s.caption;
+        carCounter.textContent = `${current + 1} / ${slides.length}`;
+        carImg.style.opacity = '1';
+      }, 150);
+
+      // Highlight active thumbnail
+      thumbsWrap.querySelectorAll('.carousel-thumb').forEach((t, i) => {
+        t.classList.toggle('active', i === current);
+      });
+
+      // Scroll active thumb into view
+      const activeThumb = thumbsWrap.querySelectorAll('.carousel-thumb')[current];
+      if (activeThumb) activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
+    function openCarousel(cardIndex) {
+      buildSlides(cardIndex);
+      current = 0;
+      updateCarousel();
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCarousel() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function goTo(index) {
+      current = (index + slides.length) % slides.length;
+      updateCarousel();
+    }
+
+    function nextSlide() { goTo(current + 1); }
+    function prevSlide() { goTo(current - 1); }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', e => {
+      if (!modal.classList.contains('open')) return;
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft')  prevSlide();
+      if (e.key === 'Escape')     closeCarousel();
+    });
+
+    // Touch / swipe support
+    let touchStartX = 0;
+    modal.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    modal.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
+    });
+  </script>
+</body>
+</html>
